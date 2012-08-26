@@ -183,7 +183,7 @@ static IplImage* create_init_img( IplImage* img, int img_dbl, double sigma )
       sig_diff = sqrt( sigma * sigma - SIFT_INIT_SIGMA * SIFT_INIT_SIGMA * 4 );
       dbl = cvCreateImage( cvSize( img->width*2, img->height*2 ),
 			   IPL_DEPTH_32F, 1 );
-      cvResize( gray, dbl, CV_INTER_CUBIC );
+      cvResize( gray, dbl, CV_INTER_CUBIC );/*origin image zoom */
       cvSmooth( dbl, dbl, CV_GAUSSIAN, 0, 0, sig_diff, sig_diff );
       cvReleaseImage( &gray );
       return dbl;
@@ -415,20 +415,20 @@ static int is_extremum( IplImage*** dog_pyr, int octv, int intvl, int r, int c )
   if( val > 0 )
     {
       for( i = -1; i <= 1; i++ )
-	for( j = -1; j <= 1; j++ )
-	  for( k = -1; k <= 1; k++ )
-	    if( val < pixval32f( dog_pyr[octv][intvl+i], r + j, c + k ) )
-	      return 0;
+		for( j = -1; j <= 1; j++ )
+		  for( k = -1; k <= 1; k++ )
+			if( val < pixval32f( dog_pyr[octv][intvl+i], r + j, c + k ) )
+			   return 0;
     }
 
   /* check for minimum */
   else
     {
       for( i = -1; i <= 1; i++ )
-	for( j = -1; j <= 1; j++ )
-	  for( k = -1; k <= 1; k++ )
-	    if( val > pixval32f( dog_pyr[octv][intvl+i], r + j, c + k ) )
-	      return 0;
+		  for( j = -1; j <= 1; j++ )
+			  for( k = -1; k <= 1; k++ )
+				  if( val > pixval32f( dog_pyr[octv][intvl+i], r + j, c + k ) )
+					  return 0;
     }
 
   return 1;

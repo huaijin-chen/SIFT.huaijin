@@ -266,4 +266,6 @@ extern void vid_view( IplImage** imgs, int n, char* win_name );
 */
 extern int win_closed( char* name );
 
+void printMat ( CvMat *H );
+
 #endif

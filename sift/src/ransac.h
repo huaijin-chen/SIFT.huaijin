@@ -15,11 +15,16 @@
  *
  * =====================================================================================
  */
-#include "corex.h"
 
 #ifndef _RANSAC_
 #define _RANSAC_ 
 
+#define FALSE 0
+#define TRUE 1
+#include "cv.h"
+#include "cxcore.h"
+#include <stdlib.h>
+#include <stdio.h>
 /*******************************************************************
  *	RANSAC algorithm
  *	intput:
@@ -32,8 +37,11 @@
  *
  *
  ******************************************************************/
-void RANSAC_Homography ( int mun, CvPoint2D64f *m1, CvPoint2D *m2, CvMat *H, CvMat *inliers_mask);
+void RANSAC_Homography ( int mun, CvPoint2D64f *m1, CvPoint2D64f *m2, CvMat *H, CvMat *inliers_mask);
 
-void 
+void compute_Homograpy_matrix (int n, CvPoint2D64f *pts1, CvPoint2D64f *pts2, CvMat *H );
+int compute_Number_Inliers( int num, CvPoint2D64f *pts1,  CvPoint2D64f *pts2, CvMat *H, CvMat *inlier_mask, double *dist_std );
+void Normalization(int num, CvPoint2D64f *p, CvMat *T);
+int isColinear( int num, CvPoint2D64f *p );
 #endif
 

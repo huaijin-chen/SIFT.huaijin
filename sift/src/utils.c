@@ -417,3 +417,20 @@ int win_closed( char* win_name )
     return 1;
   return 0;
 }
+/* 
+ * ***  FUNCTION  **************************************************************
+ *         Name:  printMat
+ *  Description:  
+ * *****************************************************************************
+ */
+int i, k;
+void printMat ( CvMat *H )/*{{{*/
+{
+	for ( i = 0; i < H->rows; i++ ){
+		for( k = 0; k < H->cols; k++ ){
+			printf("%f	",cvmGet( H, i, k ));
+		}
+		printf("\n");
+	}
+}/*-- end of function printMat-- */
+/*}}}*/

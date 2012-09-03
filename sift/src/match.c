@@ -86,8 +86,8 @@ int main( int argc, char** argv )
      
      is important for the RANSAC function to work.
   */
-  /*
-  {
+ // /*
+ // {
     CvMat* H;
     IplImage* xformed;
     H = ransac_xform( feat1, n1, FEATURE_FWD_MATCH, lsq_homog, 4, 0.01,
@@ -104,8 +104,8 @@ int main( int argc, char** argv )
 	cvReleaseImage( &xformed );
 	cvReleaseMat( &H );
       }
-  }
-  */
+ // }
+  //*/
 
   cvReleaseImage( &stacked );
   cvReleaseImage( &img1 );

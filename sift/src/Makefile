@@ -8,14 +8,15 @@ LIB_DIR	= ../lib
 INCL	= -I$(INC_DIR) `pkg-config --cflags opencv gtk+-2.0`
 LIBS	= -L$(LIB_DIR) -lfeat `pkg-config --libs opencv gtk+-2.0`
 #OBJ	= imgfeatures.o utils.o sift.o kdtree.o minpq.o xform.o
-OBJ	= imgfeatures.o utils.o sift.o kdtree.o minpq.o xform.o
-BIN     = siftfeat match dspfeat
+OBJ	= imgfeatures.o utils.o sift.o kdtree.o minpq.o xform.o ransac.o
+BIN     = siftfeat match dspfeat stitcher
 
 all: $(BIN) libfeat.a
 
 libfeat.a: $(OBJ)
 	ar rc $(LIB_DIR)/$@ $(OBJ)
 	ranlib  $(LIB_DIR)/$@
+
 
 siftfeat: libfeat.a siftfeat.c
 	$(CC) $(CFLAGS) $(INCL) siftfeat.c -o $(BIN_DIR)/$@ $(LIBS)
@@ -43,6 +44,12 @@ minpq.o: minpq.c $(INC_DIR)/minpq.h
 
 xform.o: xform.c $(INC_DIR)/xform.h
 	$(CC) $(CFLAGS) $(INCL) -c xform.c -o $@
+
+ransac.o: ransac.cpp $(INC_DIR)/ransac.h
+	gcc $(CFLAGS) $(INCL) -c ransac.cpp -o $@
+
+stitcher: libfeat.a stitcher.c 
+	$(CC) $(CFLAGS) $(INCL) stitcher.c -o $(BIN_DIR)/$@ $(LIBS)
 
 clean:
 	rm -f *~ *.o core

@@ -1,0 +1,151 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BIN	Makefile	/^BIN     = siftfeat match dspfeat$/;"	m
+BIN_DIR	Makefile	/^BIN_DIR = ..\/bin$/;"	m
+CC	Makefile	/^CC	= gcc$/;"	m
+INCL	Makefile	/^INCL	= -I$(INC_DIR) `pkg-config --cflags opencv gtk+-2.0`$/;"	m
+INC_DIR	Makefile	/^INC_DIR	= ..\/include$/;"	m
+KDTREE_BBF_MAX_NN_CHKS	match.c	23;"	d	file:
+KDTREE_BBF_MAX_NN_CHKS	stitcher.c	26;"	d	file:
+LIBS	Makefile	/^LIBS	= -L$(LIB_DIR) -lfeat `pkg-config --libs opencv gtk+-2.0`$/;"	m
+LIB_DIR	Makefile	/^LIB_DIR	= ..\/lib$/;"	m
+NN_SQ_DIST_RATIO_THR	match.c	26;"	d	file:
+NN_SQ_DIST_RATIO_THR	stitcher.c	29;"	d	file:
+Normalization	ransac.cpp	/^void Normalization(int num, CvPoint2D64f *p, CvMat *T){ \/*{{{*\/ $/;"	f
+OBJ	Makefile	/^OBJ	= imgfeatures.o utils.o sift.o kdtree.o minpq.o xform.o$/;"	m
+OPTIONS	dspfeat.c	17;"	d	file:
+OPTIONS	siftfeat.c	26;"	d	file:
+RANSAC_Homography	ransac.cpp	/^void RANSAC_Homography ( int mun, CvPoint2D64f *m1, CvPoint2D64f *m2, CvMat *H, CvMat *inliers_mask)\/*{{{*\/$/;"	f
+T_DIST	ransac.cpp	21;"	d	file:
+_RANSAC_	ransac.h	21;"	d
+_sift_features	sift.c	/^int _sift_features( IplImage* img, struct feature** feat, int intvls,$/;"	f
+add_good_ori_features	sift.c	/^static void add_good_ori_features( CvSeq* features, double* hist, int n,$/;"	f	file:
+adjust_for_img_dbl	sift.c	/^static void adjust_for_img_dbl( CvSeq* features )$/;"	f	file:
+arg_parse	dspfeat.c	/^static void arg_parse( int argc, char** argv )$/;"	f	file:
+arg_parse	siftfeat.c	/^static void arg_parse( int argc, char** argv )$/;"	f	file:
+array_double	utils.c	/^int array_double( void** array, int n, int size )$/;"	f
+assign_part_key	kdtree.c	/^static void assign_part_key( struct kd_node* kd_node )$/;"	f	file:
+basename	utils.c	/^char* basename( const char* pathname )$/;"	f
+bbf_data	kdtree.c	/^struct bbf_data$/;"	s	file:
+build_dog_pyr	sift.c	/^static IplImage*** build_dog_pyr( IplImage*** gauss_pyr, int octvs, int intvls )$/;"	f	file:
+build_gauss_pyr	sift.c	/^static IplImage*** build_gauss_pyr( IplImage* base, int octvs,$/;"	f	file:
+calc_feature_oris	sift.c	/^static void calc_feature_oris( CvSeq* features, IplImage*** gauss_pyr )$/;"	f	file:
+calc_feature_scales	sift.c	/^static void calc_feature_scales( CvSeq* features, double sigma, int intvls )$/;"	f	file:
+calc_grad_mag_ori	sift.c	/^static int calc_grad_mag_ori( IplImage* img, int r, int c, double* mag,$/;"	f	file:
+calc_min_inliers	xform.c	/^static int calc_min_inliers( int n, int m, double p_badsupp, double p_badxform )$/;"	f	file:
+clone_feature	sift.c	/^static struct feature* clone_feature( struct feature* feat )$/;"	f	file:
+compute_Homograpy_matrix	ransac.cpp	/^void compute_Homograpy_matrix (int n, CvPoint2D64f *pts1, CvPoint2D64f *pts2, cvMat *H )\/*{{{*\/$/;"	f
+compute_Number_Inliers	ransac.cpp	/^int compute_Number_Inliers( int num, CvPoint2D64f *pts1,  CvPoint2D64f *pts2, cvMat *inlier_mask, double dist_std ) \/*{{{*\/$/;"	f
+compute_descriptors	sift.c	/^static void compute_descriptors( CvSeq* features, IplImage*** gauss_pyr, int d,$/;"	f	file:
+contr_thr	siftfeat.c	/^double contr_thr = SIFT_CONTR_THR;$/;"	v
+convert_to_gray32	sift.c	/^static IplImage* convert_to_gray32( IplImage* img )$/;"	f	file:
+create_init_img	sift.c	/^static IplImage* create_init_img( IplImage* img, int img_dbl, double sigma )$/;"	f	file:
+curv_thr	siftfeat.c	/^int curv_thr = SIFT_CURV_THR;$/;"	v
+d	kdtree.c	/^  double d;$/;"	m	struct:bbf_data	file:
+decrease_pq_node_key	minpq.c	/^static void decrease_pq_node_key( struct pq_node* pq_array, int i, int key )$/;"	f	file:
+deriv_3D	sift.c	/^static CvMat* deriv_3D( IplImage*** dog_pyr, int octv, int intvl, int r, int c )$/;"	f	file:
+descr_dist_sq	imgfeatures.c	/^double descr_dist_sq( struct feature* f1, struct feature* f2 )$/;"	f
+descr_hist	sift.c	/^static double*** descr_hist( IplImage* img, int r, int c, double ori,$/;"	f	file:
+descr_hist_bins	siftfeat.c	/^int descr_hist_bins = SIFT_DESCR_HIST_BINS;$/;"	v
+descr_width	siftfeat.c	/^int descr_width = SIFT_DESCR_WIDTH;$/;"	v
+display	siftfeat.c	/^int display = 1;$/;"	v
+display_big_img	utils.c	/^void display_big_img( IplImage* img, char* title )$/;"	f
+dist_sq_2D	utils.c	/^double dist_sq_2D( CvPoint2D64f p1, CvPoint2D64f p2 )$/;"	f
+dlt_homog	xform.c	/^CvMat* dlt_homog( CvPoint2D64f* pts, CvPoint2D64f* mpts, int n )$/;"	f
+dominant_ori	sift.c	/^static double dominant_ori( double* hist, int n )$/;"	f	file:
+downsample	sift.c	/^static IplImage* downsample( IplImage* img )$/;"	f	file:
+draw_features	imgfeatures.c	/^void draw_features( IplImage* img, struct feature* feat, int n )$/;"	f
+draw_lowe_feature	imgfeatures.c	/^static void draw_lowe_feature( IplImage* img, struct feature* feat,$/;"	f	file:
+draw_lowe_features	imgfeatures.c	/^static void draw_lowe_features( IplImage* img, struct feature* feat, int n )$/;"	f	file:
+draw_oxfd_feature	imgfeatures.c	/^static void draw_oxfd_feature( IplImage* img, struct feature* feat,$/;"	f	file:
+draw_oxfd_features	imgfeatures.c	/^static void draw_oxfd_features( IplImage* img, struct feature* feat, int n )$/;"	f	file:
+draw_ransac_sample	xform.c	/^static struct feature** draw_ransac_sample( struct feature** features, int n,$/;"	f	file:
+draw_x	utils.c	/^void draw_x( IplImage* img, CvPoint pt, int r, int w, CvScalar color )$/;"	f
+erase_from_stream	utils.c	/^void erase_from_stream( FILE* stream, int n )$/;"	f
+expand_kd_node_subtree	kdtree.c	/^static void expand_kd_node_subtree( struct kd_node* kd_node )$/;"	f	file:
+explore_to_leaf	kdtree.c	/^static struct kd_node* explore_to_leaf( struct kd_node* kd_node,$/;"	f	file:
+export_features	imgfeatures.c	/^int export_features( char* filename, struct feature* feat, int n )$/;"	f
+export_lowe_features	imgfeatures.c	/^static int export_lowe_features( char* filename, struct feature* feat, int n )$/;"	f	file:
+export_oxfd_features	imgfeatures.c	/^static int export_oxfd_features( char* filename, struct feature* feat, int n )$/;"	f	file:
+extract_corresp_pts	xform.c	/^static void extract_corresp_pts( struct feature** features, int n, int mtype,$/;"	f	file:
+fatal_error	utils.c	/^void fatal_error(char* format, ...)$/;"	f
+feat_file	dspfeat.c	/^char* feat_file;$/;"	v
+feat_type	dspfeat.c	/^int feat_type = FEATURE_LOWE;$/;"	v
+feature_cmp	sift.c	/^static int feature_cmp( void* feat1, void* feat2, void* param )$/;"	f	file:
+find_consensus	xform.c	/^static int find_consensus( struct feature** features, int n, int mtype,$/;"	f	file:
+get_match	xform.c	/^static inline struct feature* get_match( struct feature* feat, int mtype )$/;"	f	file:
+get_matched_features	xform.c	/^static int get_matched_features( struct feature* features, int n, int mtype,$/;"	f	file:
+hessian_3D	sift.c	/^static CvMat* hessian_3D( IplImage*** dog_pyr, int octv, int intvl, int r,$/;"	f	file:
+hist_to_descr	sift.c	/^static void hist_to_descr( double*** hist, int d, int n, struct feature* feat )$/;"	f	file:
+homog_xfer_err	xform.c	/^double homog_xfer_err( CvPoint2D64f pt, CvPoint2D64f mpt, CvMat* H )$/;"	f
+img_dbl	siftfeat.c	/^int img_dbl = SIFT_IMG_DBL;$/;"	v
+img_file	dspfeat.c	/^char* img_file;$/;"	v
+img_file_name	siftfeat.c	/^char* img_file_name;$/;"	v
+import_features	imgfeatures.c	/^int import_features( char* filename, int type, struct feature** feat )$/;"	f
+import_lowe_features	imgfeatures.c	/^static int import_lowe_features( char* filename, struct feature** features )$/;"	f	file:
+import_oxfd_features	imgfeatures.c	/^static int import_oxfd_features( char* filename, struct feature** features )$/;"	f	file:
+insert_into_nbr_array	kdtree.c	/^static int insert_into_nbr_array( struct feature* feat, struct feature** nbrs,$/;"	f	file:
+insertion_sort	kdtree.c	/^static void insertion_sort( double* array, int n )$/;"	f	file:
+interp_contr	sift.c	/^static double interp_contr( IplImage*** dog_pyr, int octv, int intvl, int r,$/;"	f	file:
+interp_extremum	sift.c	/^static struct feature* interp_extremum( IplImage*** dog_pyr, int octv,$/;"	f	file:
+interp_hist_entry	sift.c	/^static void interp_hist_entry( double*** hist, double rbin, double cbin,$/;"	f	file:
+interp_hist_peak	sift.c	944;"	d	file:
+interp_step	sift.c	/^static void interp_step( IplImage*** dog_pyr, int octv, int intvl, int r, int c,$/;"	f	file:
+intvls	siftfeat.c	/^int intvls = SIFT_INTVLS;$/;"	v
+isColinear	ransac.cpp	/^void isColinear( int num, CvPoint2D64f *p ){ \/*{{{*\/$/;"	f
+is_extremum	sift.c	/^static int is_extremum( IplImage*** dog_pyr, int octv, int intvl, int r, int c )$/;"	f	file:
+is_too_edge_like	sift.c	/^static int is_too_edge_like( IplImage* dog_img, int r, int c, int curv_thr )$/;"	f	file:
+kd_node_init	kdtree.c	/^static struct kd_node* kd_node_init( struct feature* features, int n )$/;"	f	file:
+kdtree_bbf_knn	kdtree.c	/^int kdtree_bbf_knn( struct kd_node* kd_root, struct feature* feat, int k,$/;"	f
+kdtree_bbf_spatial_knn	kdtree.c	/^int kdtree_bbf_spatial_knn( struct kd_node* kd_root, struct feature* feat,$/;"	f
+kdtree_build	kdtree.c	/^struct kd_node* kdtree_build( struct feature* features, int n )$/;"	f
+kdtree_release	kdtree.c	/^void kdtree_release( struct kd_node* kd_root )$/;"	f
+left	minpq.c	/^static inline int left( int i )$/;"	f	file:
+log_factorial	xform.c	/^static inline double log_factorial( int n )$/;"	f	file:
+lsq_homog	xform.c	/^CvMat* lsq_homog( CvPoint2D64f* pts, CvPoint2D64f* mpts, int n )$/;"	f
+main	dspfeat.c	/^int main( int argc, char** argv )$/;"	f
+main	match.c	/^int main( int argc, char** argv )$/;"	f
+main	siftfeat.c	/^int main( int argc, char** argv )$/;"	f
+main	stitcher.c	/^int main( int argc, char** argv )$/;"	f
+median_select	kdtree.c	/^static double median_select( double* array, int n )$/;"	f	file:
+minpq_extract_min	minpq.c	/^void* minpq_extract_min( struct min_pq* min_pq )$/;"	f
+minpq_get_min	minpq.c	/^void* minpq_get_min( struct min_pq* min_pq )$/;"	f
+minpq_init	minpq.c	/^struct min_pq* minpq_init()$/;"	f
+minpq_insert	minpq.c	/^int minpq_insert( struct min_pq* min_pq, void* data, int key )$/;"	f
+minpq_release	minpq.c	/^void minpq_release( struct min_pq** min_pq )$/;"	f
+new_feature	sift.c	/^static struct feature* new_feature( void )$/;"	f	file:
+normalize_descr	sift.c	/^static void normalize_descr( struct feature* feat )$/;"	f	file:
+old_data	kdtree.c	/^  void* old_data;$/;"	m	struct:bbf_data	file:
+ori_hist	sift.c	/^static double* ori_hist( IplImage* img, int r, int c, int n, int rad,$/;"	f	file:
+out_file_name	siftfeat.c	/^char* out_file_name = NULL;$/;"	v
+out_img_name	siftfeat.c	/^char* out_img_name = NULL;$/;"	v
+parent	minpq.c	/^static inline int parent( int i )$/;"	f	file:
+partition_array	kdtree.c	/^static int partition_array( double* array, int n, double pivot )$/;"	f	file:
+partition_features	kdtree.c	/^static void partition_features( struct kd_node* kd_node )$/;"	f	file:
+persp_xform_pt	xform.c	/^CvPoint2D64f persp_xform_pt( CvPoint2D64f pt, CvMat* T )$/;"	f
+pname	dspfeat.c	/^char* pname;$/;"	v
+pname	siftfeat.c	/^char* pname;$/;"	v
+prepend_path	utils.c	/^char* prepend_path( const char* path, const char* file )$/;"	f
+progress	utils.c	/^void progress( int done )$/;"	f
+rank_select	kdtree.c	/^static double rank_select( double* array, int n, int r )$/;"	f	file:
+ransac_xform	xform.c	/^CvMat* ransac_xform( struct feature* features, int n, int mtype,$/;"	f
+release_descr_hist	sift.c	/^static void release_descr_hist( double**** hist, int d )$/;"	f	file:
+release_mem	xform.c	/^static inline void release_mem( CvPoint2D64f* pts1, CvPoint2D64f* pts2,$/;"	f	file:
+release_pyr	sift.c	/^static void release_pyr( IplImage**** pyr, int octvs, int n )$/;"	f	file:
+replace_extension	utils.c	/^char* replace_extension( const char* file, const char* extn )$/;"	f
+restore_minpq_order	minpq.c	/^static void restore_minpq_order( struct pq_node* pq_array, int i, int n )$/;"	f	file:
+right	minpq.c	/^static inline int right( int i )$/;"	f	file:
+scale_space_extrema	sift.c	/^static CvSeq* scale_space_extrema( IplImage*** dog_pyr, int octvs, int intvls,$/;"	f	file:
+sift_features	sift.c	/^int sift_features( IplImage* img, struct feature** feat )$/;"	f
+sigma	siftfeat.c	/^double sigma = SIFT_SIGMA;$/;"	v
+smooth_ori_hist	sift.c	/^static void smooth_ori_hist( double* hist, int n )$/;"	f	file:
+stack_imgs	utils.c	/^extern IplImage* stack_imgs( IplImage* img1, IplImage* img2 )$/;"	f
+usage	dspfeat.c	/^static void usage( char* name )$/;"	f	file:
+usage	siftfeat.c	/^static void usage( char* name )$/;"	f	file:
+vid_view	utils.c	/^void vid_view( IplImage** imgs, int n, char* win_name )$/;"	f
+win_closed	utils.c	/^int win_closed( char* win_name )$/;"	f
+within_rect	kdtree.c	/^static int within_rect( CvPoint2D64f pt, CvRect rect )$/;"	f	file:

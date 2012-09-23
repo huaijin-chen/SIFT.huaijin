@@ -151,13 +151,34 @@ int main( int argc, char** argv )
 	printMat( H );
 	xformed = cvCreateImage( new_size, IPL_DEPTH_8U, 3 );
 	cvWarpPerspective( img1, xformed, H, CV_INTER_LINEAR + CV_WARP_FILL_OUTLIERS, cvScalarAll( 0 ) );
+	cvNamedWindow( "Xformed1", 1 );
+	cvShowImage( "Xformed1", xformed );
+	cvWaitKey( 0 );
+	cvDestroyWindow("Xformed1");
+	//cvSaveImage("im2.png", xformed);
 	cvWarpPerspective( im1_tempMask, im1_mask, H, CV_INTER_LINEAR + CV_WARP_FILL_OUTLIERS, cvScalarAll( 0 ) );
+	//cvSaveImage("im1_mask.png", im1_mask);
+	cvNamedWindow( "im1_mask", 1 );
+	cvShowImage( "im1_mask", im1_mask );
+	cvWaitKey( 0 );
+	cvDestroyWindow("im1_mask");
 
 	/* Align image1 to bound */
 	cvWarpPerspective( im2_tempMask, im2_mask, T, CV_INTER_LINEAR + CV_WARP_FILL_OUTLIERS, cvScalarAll( 0 ) );
+	//cvSaveImage( "im2_mask.png", im2_mask );
+	cvNamedWindow( "im12_mask", 1 );
+	cvShowImage( "im2_mask", im2_mask );
+	cvWaitKey( 0 );
+	cvDestroyWindow("im2_mask");
 	cvSetImageROI( xformed, cvRect( tx, ty, img2->width, img2->height ) );
 	cvCopy( img2, xformed, NULL );
 	
+	IplImage* huaijin = cvCreateImage( new_size, IPL_DEPTH_8U, 3 );
+	cvWarpPerspective( img2, huaijin, T, CV_INTER_LINEAR + CV_WARP_FILL_OUTLIERS, cvScalarAll( 0 ) );
+	cvNamedWindow( "im12_mask_i", 1 );
+	cvShowImage( "im2_mask_i", huaijin);
+	cvWaitKey( 0 );
+	cvDestroyWindow("im2_mask_i");
 	cvResetImageROI( xformed );
 	//cvSaveImage( "re.png", xformed );
 
@@ -168,6 +189,7 @@ int main( int argc, char** argv )
 	cvNamedWindow( "Xformed", 1 );
 	cvShowImage( "Xformed", xformed );
 	cvWaitKey( 0 );
+	cvDestroyWindow("Xformed");
 	/*  */
 
 

@@ -20,5 +20,6 @@
 
 int main()
 {
-	pyrDown();
+	cvPyrDown();
+	cvPyrUp()
 }
